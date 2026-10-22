@@ -7,8 +7,8 @@ repository's verify/verify.py.
 import numpy as np
 import pytest
 
-from simtemplate import epidemic_driver, sim_template_coupled
-from simtemplate.epidemic import initialize_population
+from simstreams import epidemic_driver, sim_template_coupled
+from simstreams.epidemic import initialize_population
 
 
 def _sum_max(out):

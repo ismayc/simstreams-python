@@ -1,4 +1,4 @@
-"""simtemplate: parallel simulation experiments on a personal computer.
+"""simstreams: parallel simulation experiments on a personal computer.
 
 The package generalizes the ``sim_template`` program developed in the book
 *Parallel Simulation Experiments on a Personal Computer* by R. L. Eubank and
@@ -17,14 +17,14 @@ Main functions:
 - :func:`pi_worker` and :func:`cauchy_worker` are the book's Chapter 4
   workers.
 - :func:`sim_template_coupled` runs workers that communicate through shared
-  mailboxes, and :mod:`simtemplate.epidemic` is the Chapter 6 case study
+  mailboxes, and :mod:`simstreams.epidemic` is the Chapter 6 case study
   built on it.
 - :func:`benchmark` and :func:`benchmark_cores` time a simulation across core
   counts.
 - :class:`PCG8` is the toy generator of Appendix C.
 
-The companion R package is ``simtemplate`` on GitHub
-(https://github.com/ismayc/simtemplate). The book's code repository is
+The companion R package is ``simstreams`` on GitHub
+(https://github.com/ismayc/simstreams). The book's code repository is
 https://github.com/ismayc/parallel-simulation-book, and the web edition is
 at https://parallel-simulation-book.netlify.app.
 """

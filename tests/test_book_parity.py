@@ -6,7 +6,7 @@ the template or a worker that alters a published result fails here.
 
 import numpy as np
 
-from simtemplate import cauchy_worker, mailbox_demo, pi_worker, sim_template
+from simstreams import cauchy_worker, mailbox_demo, pi_worker, sim_template
 
 
 def test_chapter_4_cauchy_sim_template_1234_100_20_4_5():

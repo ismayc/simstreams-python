@@ -63,7 +63,7 @@ def benchmark_cores(run_simulation, core_counts, repeats=10, warmup=1):
     run_simulation : callable
         A function accepting ``n_cores`` as its only argument that runs the
         complete simulation. Typically a thin wrapper around
-        :func:`simtemplate.sim_template` with every other argument fixed.
+        :func:`simstreams.sim_template` with every other argument fixed.
     core_counts : iterable
         Core counts to benchmark. The first one is the baseline for the
         speed-up.

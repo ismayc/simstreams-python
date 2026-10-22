@@ -1,10 +1,10 @@
-# simtemplate
+# simstreams
 
-[![Tests](https://github.com/ismayc/simtemplate-python/actions/workflows/test.yml/badge.svg)](https://github.com/ismayc/simtemplate-python/actions/workflows/test.yml)
+[![Tests](https://github.com/ismayc/simstreams-python/actions/workflows/test.yml/badge.svg)](https://github.com/ismayc/simstreams-python/actions/workflows/test.yml)
 
 Run simulation experiments in parallel on a multicore personal computer.
 
-`simtemplate` generalizes the `sim_template` program developed in the book
+`simstreams` generalizes the `sim_template` program developed in the book
 *Parallel Simulation Experiments on a Personal Computer* by R. L. Eubank and
 Chester Ismay (CRC Press). The book's template reads its worker with
 `from sim_worker import worker`. In the package the worker is an argument, so
@@ -21,14 +21,14 @@ are available on their own:
 - `pi_worker()` and `cauchy_worker()` are the book's example workers
   (Chapter 4).
 - `sim_template_coupled()` runs workers that communicate through shared
-  mailboxes and a barrier, and `simtemplate.epidemic` is the Chapter 6 SIRD
+  mailboxes and a barrier, and `simstreams.epidemic` is the Chapter 6 SIRD
   case study with migration built on it.
 - `benchmark()` and `benchmark_cores()` time a simulation across core counts
   and report the speed-up (Chapter 7).
 - `PCG8` is the toy 8-bit generator of Appendix C.
 
 The companion R package is
-[simtemplate](https://github.com/ismayc/simtemplate). The book's code
+[simstreams](https://github.com/ismayc/simstreams). The book's code
 repository is
 [parallel-simulation-book](https://github.com/ismayc/parallel-simulation-book),
 and the web edition is at
@@ -37,11 +37,11 @@ and the web edition is at
 ## Installation
 
 ```
-pip install git+https://github.com/ismayc/simtemplate-python
+pip install git+https://github.com/ismayc/simstreams-python
 ```
 
 Plotting the epidemic needs matplotlib: add `[plot]`, as in
-`pip install "simtemplate[plot] @ git+https://github.com/ismayc/simtemplate-python"`.
+`pip install "simstreams[plot] @ git+https://github.com/ismayc/simstreams-python"`.
 
 ## Usage
 
@@ -51,7 +51,7 @@ parameters. The one difference is that the worker comes first.
 
 ```python
 import numpy as np
-from simtemplate import sim_template, pi_worker, cauchy_worker
+from simstreams import sim_template, pi_worker, cauchy_worker
 
 if __name__ == "__main__":
     # Chapter 4: estimate pi with 1,000,000 replications of 100 darts on 4 cores
@@ -94,7 +94,7 @@ if __name__ == "__main__":
 ### The epidemic case study
 
 ```python
-from simtemplate import epidemic_driver
+from simstreams import epidemic_driver
 
 if __name__ == "__main__":
     # 4 towns, 30 days, 20 replications, 10 migrants a day, one infection
@@ -107,7 +107,7 @@ if __name__ == "__main__":
 ### Timing a speed-up experiment
 
 ```python
-from simtemplate import benchmark_cores
+from simstreams import benchmark_cores
 
 def run_pi(n_cores):
     return sim_template(pi_worker, 1234, 100, 1_000_000, n_cores)

@@ -8,7 +8,7 @@ recoveries and deaths, exposes contacts, infects some of them, and then sends
 
 The model functions are the book's ``epidemic_functions.py``, the worker is
 ``epidemic_worker.py``, and :func:`epidemic_driver` is ``epidemic_driver.py``
-run through :func:`simtemplate.sim_template_coupled`.
+run through :func:`simstreams.sim_template_coupled`.
 """
 
 import numpy as np
@@ -261,7 +261,7 @@ def plot_epidemic(history, f_name=None, show=True):
     ``history`` is one town's ``(n_reps, days)`` array, or the whole list
     returned by :func:`epidemic_driver`, in which case every town's
     replications are drawn. Requires matplotlib (``pip install
-    simtemplate[plot]``).
+    simstreams[plot]``).
     """
     import matplotlib.pyplot as plt
 

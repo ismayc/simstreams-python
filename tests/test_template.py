@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 from numpy.random import SeedSequence, default_rng
 
-from simtemplate import (
+from simstreams import (
     benchmark_cores,
     make_generators,
     make_set_up,

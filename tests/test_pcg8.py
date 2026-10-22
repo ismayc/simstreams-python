@@ -1,6 +1,6 @@
 import pytest
 
-from simtemplate import PCG8, rotr8
+from simstreams import PCG8, rotr8
 
 
 def test_rotr8_rotates_within_eight_bits():
