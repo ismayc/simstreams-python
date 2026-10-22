@@ -39,13 +39,23 @@ Book = "https://parallel-simulation-book.netlify.app"
 "R package" = "https://github.com/ismayc/simstreams"
 
 [dependency-groups]
-dev = ["pytest>=8", "ruff>=0.6"]
+dev = [
+    "matplotlib>=3.7",
+    "pytest>=8",
+    "pytest-cov>=6",
+    "ruff>=0.6",
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/simstreams"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+addopts = "--cov=simstreams --cov-report=term-missing"
+
+[tool.coverage.report]
+fail_under = 100
+show_missing = true
 
 [tool.ruff]
 line-length = 88

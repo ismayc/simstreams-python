@@ -126,9 +126,14 @@ full quartet `seed`, `n`, `n_reps`, and `n_cores` is what reproduces a result.
 ## Development
 
 ```
-uv sync
+uv sync --group dev
 uv run pytest
 ```
+
+The test suite covers every line, and `pytest` fails below 100% (the gate is
+in `pyproject.toml`). The parallel templates run their workers in child
+processes, where coverage is not recorded, so `tests/test_inprocess.py` calls
+the same worker functions directly.
 
 ## License
 
