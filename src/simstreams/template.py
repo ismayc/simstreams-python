@@ -45,7 +45,7 @@ def make_generators(seed, n_cores):
     seed, so the master ``seed`` fixes every process's stream and the streams
     do not overlap.
 
-    Returns a list of ``n_cores`` :class:`numpy.random.Generator` objects.
+    Returns a list of ``n_cores`` ``numpy.random.Generator`` objects.
     """
     ss = SeedSequence(seed)
     child_seeds = ss.spawn(int(n_cores))
@@ -76,7 +76,7 @@ def sim_template(worker, seed, n, n_reps, n_cores, *args, pool=None):
     ----------
     worker : callable
         ``worker(rg, n, n_reps, param_tuple)``. ``rg`` is the process's
-        :class:`numpy.random.Generator`, ``n`` the per-replication sample
+        ``numpy.random.Generator``, ``n`` the per-replication sample
         size, ``n_reps`` the process's share of the replications, and
         ``param_tuple`` the model parameters passed as ``*args``. The worker
         must be importable by the child processes (defined at module level,
@@ -127,7 +127,7 @@ def sim_template(worker, seed, n, n_reps, n_cores, *args, pool=None):
 def sim_template_serial(worker, seed, n, n_reps, *args):
     """Run a simulation experiment in the current process.
 
-    The serial counterpart of :func:`sim_template`: the same seed layout as a
+    The serial counterpart of ``sim_template``: the same seed layout as a
     one-process run, executed without a pool. Useful for debugging a worker
     before running it in parallel, and for the one-core baseline of a timing
     experiment. The result equals

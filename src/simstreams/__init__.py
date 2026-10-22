@@ -9,19 +9,19 @@ available on their own.
 
 Main functions:
 
-- :func:`sim_template` runs a worker across ``n_cores`` processes with one
+- ``sim_template`` runs a worker across ``n_cores`` processes with one
   independent PCG64 stream per process.
-- :func:`sim_template_serial` runs the same experiment in the current process.
-- :func:`make_generators`, :func:`split_reps`, and :func:`make_set_up` are the
+- ``sim_template_serial`` runs the same experiment in the current process.
+- ``make_generators``, ``split_reps``, and ``make_set_up`` are the
   building blocks, for writing your own driver.
-- :func:`pi_worker` and :func:`cauchy_worker` are the book's Chapter 4
+- ``pi_worker`` and ``cauchy_worker`` are the book's Chapter 4
   workers.
-- :func:`sim_template_coupled` runs workers that communicate through shared
-  mailboxes, and :mod:`simstreams.epidemic` is the Chapter 6 case study
+- ``sim_template_coupled`` runs workers that communicate through shared
+  mailboxes, and ``simstreams.epidemic`` is the Chapter 6 case study
   built on it.
-- :func:`benchmark` and :func:`benchmark_cores` time a simulation across core
+- ``benchmark`` and ``benchmark_cores`` time a simulation across core
   counts.
-- :class:`PCG8` is the toy generator of Appendix C.
+- ``PCG8`` is the toy generator of Appendix C.
 
 The companion R package is ``simstreams`` on GitHub
 (https://github.com/ismayc/simstreams). The book's code repository is

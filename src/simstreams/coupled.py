@@ -1,12 +1,12 @@
 """A template for workers that communicate (Chapter 6).
 
-:func:`sim_template` keeps its workers independent. The epidemic case study
+``sim_template`` keeps its workers independent. The epidemic case study
 needs workers that exchange information while they run: each process is one
 town, every town runs all ``n_reps`` replications, and migrants move between
-towns at the end of each day. :func:`sim_template_coupled` is the book's
+towns at the end of each day. ``sim_template_coupled`` is the book's
 ``sim_template_epidemic.py`` with the worker as an argument. It gives every
 worker a shared barrier and one mailbox per worker, built with a
-:class:`multiprocessing.Manager`.
+``multiprocessing.Manager``.
 """
 
 from multiprocessing import Manager, Pool
@@ -23,7 +23,7 @@ def sim_template_coupled(worker, seed, n, n_reps, n_cores, *args):
         ``worker(rg_and_id, n, n_reps, barrier, mailboxes, param_tuple)``.
         ``rg_and_id`` is the pair ``(rg, worker_id)`` with ``worker_id`` in
         ``range(n_cores)``, ``barrier`` is a shared
-        :class:`threading.Barrier` for ``n_cores`` parties, and ``mailboxes``
+        ``threading.Barrier`` for ``n_cores`` parties, and ``mailboxes``
         is a shared dict mapping each ``worker_id`` to a shared list.
     seed : int
         Master seed.
@@ -31,7 +31,7 @@ def sim_template_coupled(worker, seed, n, n_reps, n_cores, *args):
         Per-replication size (days, for the epidemic).
     n_reps : int
         Number of replications **each** worker runs. Unlike
-        :func:`sim_template`, the replications are not divided.
+        ``sim_template``, the replications are not divided.
     n_cores : int
         Number of worker processes.
     *args
