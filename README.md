@@ -1,4 +1,4 @@
-# simstreams
+# simstreams <img src="branding/logo.png" align="right" height="138" alt="simstreams hex sticker: four braided random-number streams, plum and gold" />
 
 [![Tests](https://github.com/ismayc/simstreams-python/actions/workflows/test.yml/badge.svg)](https://github.com/ismayc/simstreams-python/actions/workflows/test.yml)
 
